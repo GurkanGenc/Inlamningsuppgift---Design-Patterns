@@ -2,21 +2,18 @@
 
 namespace Design_Patterns_Assignment
 {
-    internal class MessageHandler
+    internal class MessageHandler : IMessageStrategy
     {
-        internal static void SendEmail(string message)
+        private IMessageStrategy messageStrategy;
+
+        public void SetMessageStrategy(IMessageStrategy message)
         {
-            Console.WriteLine($"sending \"{message}\" as an email");
+            this.messageStrategy = message;
         }
 
-        internal static void SendSMS(string message)
+        public void SendMessage(string message)
         {
-            Console.WriteLine($"sending \"{message}\" as a sms");
-        }
-
-        internal static void SendFacebookMessage(string message)
-        {
-            Console.WriteLine($"sending \"{message}\" as a facebookmessage");
+            messageStrategy.SendMessage(message);
         }
     }
 }

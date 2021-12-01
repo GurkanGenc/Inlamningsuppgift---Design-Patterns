@@ -8,9 +8,9 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+            Strategy.Run();
             Decorator.Run();
             Repository.Run();
-            Strategy.Run();
             Observer.Run();
         }     
     }

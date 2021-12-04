@@ -1,17 +1,52 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Design_Patterns_Assignment
 {
-    internal class Email
+    internal class Email : IEmail
     {
-        internal static string Check()
+        public List<IObserver> Observers { get; set; }
+        public string message { get; set; }
+
+        public Email()
         {
-            var evenMinute = DateTime.Now.Minute % 2;
-            if (evenMinute==0)
+            Observers = new();
+        }
+
+        //internal static string Check()
+        //{
+        //    var evenMinute = DateTime.Now.Minute % 2;
+        //    if (evenMinute==0)
+        //    {
+        //        return "this is the email";
+        //    }
+        //    return null;
+        //}
+
+        public void NotifyObservers()
+        {
+            foreach (Observer observer in Observers)
             {
-                return "this is the email";
+                observer.Update(message);
             }
-            return null;
+        }
+
+        public void RegisterObserver(IObserver observer)
+        {
+            Observers.Add(observer);
+        }
+
+        public void UnregisterObserver(IObserver observer)
+        {
+            Observers.Remove(observer);
+        }
+
+        public void UpdateMessage()
+        {
+            message = "This is the new email";
+            Console.WriteLine(message);
+
+            NotifyObservers();
         }
     }
 }

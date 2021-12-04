@@ -17,18 +17,12 @@ namespace Design_Patterns_Assignment
 
             message.UpdateMessage();
 
-            //var email = "";
-            //while (string.IsNullOrEmpty(email))
-            //{
-            //    email = Email();
-            //}
-            //Console.WriteLine(email);
             Console.WriteLine();
         }
 
         public void Update(string message)
         {
-            throw new NotImplementedException();
+            
         }
     }
 }

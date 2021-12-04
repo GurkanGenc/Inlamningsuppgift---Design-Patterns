@@ -11,7 +11,6 @@ namespace ConsoleApp1
             Strategy.Run();
             Observer.Run();
             Repository.Run();
-
             Decorator.Run();
         }     
     }

@@ -1,11 +1,12 @@
 ﻿using Design_Patterns_Assignment;
-
+using Design_Patterns_Assignment.Decorators;
 using System;
 
 namespace Design_Patterns_Assignment
 {
     internal class Decorator
     {
+        
         internal static void Run()
         {
             // Refactor this code so that it uses the Decorator Pattern
@@ -26,7 +27,7 @@ namespace Design_Patterns_Assignment
             Console.WriteLine();
             Console.WriteLine("Type the tags you want separated by space");
             string tagSelection = Console.ReadLine();
-            string result = HTMLGenerator.TagProcessor(tagSelection, textInput);
+            string result = TextGenerator.TagProcessor(tagSelection, textInput);
             Console.WriteLine(result);
             Console.WriteLine();
         }

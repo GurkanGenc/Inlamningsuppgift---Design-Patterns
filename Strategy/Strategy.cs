@@ -31,8 +31,12 @@ namespace Design_Patterns_Assignment
             {
                 messageHandler.SetMessageStrategy(new SendFbMsgStrategy());
             }
-            else
-                Console.WriteLine("Try again...");
+            //else
+            //{
+            //    Console.WriteLine("Try again...");
+            //    Console.ReadKey();
+            //}
+                
 
             messageHandler.SendMessage(message);
             Console.WriteLine();

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Design_Patterns_Assignment
 {
-    public class SimulatedDatabase
+    public class NewSimulatedDatabase : IDataRepository
     {
         public string Load(string v)
         {
@@ -15,7 +15,7 @@ namespace Design_Patterns_Assignment
 
         public void Save(string data)
         {
-            Console.WriteLine($"Saving data \"{data}\"");
+            Console.WriteLine($"Saving new data \"{data}\"");
         }
     }
 }

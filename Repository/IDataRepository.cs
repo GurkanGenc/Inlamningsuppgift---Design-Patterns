@@ -10,5 +10,9 @@ namespace Design_Patterns_Assignment
     {
         string Load(string v);
         void Save(string data);
+
+        string GetData();
+        string GetCustomer();
+        string GetAnimal();
     }
 }

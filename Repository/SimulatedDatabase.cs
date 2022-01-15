@@ -6,8 +6,29 @@ using System.Threading.Tasks;
 
 namespace Design_Patterns_Assignment
 {
-    public class SimulatedDatabase
+    public class SimulatedDatabase : IDataRepository
     {
+        public string GetAnimal()
+        {
+            var animal = Load("From Table Animal Where Owner==Steve");
+
+            return animal;
+        }
+
+        public string GetCustomer()
+        {
+            var customer = Load("From Table Customer Where Name==Steve");
+
+            return customer;
+        }
+
+        public string GetData()
+        {
+            var data = Load("Dataset A");
+
+            return data;
+        }
+
         public string Load(string v)
         {
             return v;

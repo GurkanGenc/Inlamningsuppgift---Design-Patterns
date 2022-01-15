@@ -6,10 +6,27 @@ namespace Design_Patterns_Assignment
 {
     internal class Repository
     {
+        //private SimulatedDatabase SimulatedDatabase;
+
+        //public Repository(SimulatedDatabase simulatedDatabase)
+        //{
+        //    SimulatedDatabase = simulatedDatabase;
+        //}
+
         internal static void Run()
         {
             // Refactor this code so that it uses the Repository Pattern
             Console.WriteLine("Repository");
+
+            var database = new SimulatedDatabase();
+
+            var data = database.GetData();
+            var customer = database.GetCustomer();
+            var animal = database.GetAnimal();
+
+            database.Save($"New {data}");
+            database.Save($"New {customer}");
+            database.Save($"New {animal}");
 
             //var data = SimulatedDatabase.Load("Dataset A");
             //var customer = SimulatedDatabase.Load("From Table Customer Where Name==Steve"); // this is a search
@@ -17,15 +34,6 @@ namespace Design_Patterns_Assignment
             //SimulatedDatabase.Save(data);
             //SimulatedDatabase.Save(customer);
             //SimulatedDatabase.Save(animal);
-
-            NewSimulatedDatabase newSimulatedDatabase = new();
-
-            var data = newSimulatedDatabase.Load("Dataset A");
-            var customer = newSimulatedDatabase.Load("From Table Customer Where Name==Steve"); // this is a search
-            var animal = newSimulatedDatabase.Load("From Table Animal Where Owner==Steve"); // this is a search
-            newSimulatedDatabase.Save(data);
-            newSimulatedDatabase.Save(customer);
-            newSimulatedDatabase.Save(animal);
 
             Console.WriteLine();
         }

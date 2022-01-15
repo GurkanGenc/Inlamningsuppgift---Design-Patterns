@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Design_Patterns_Assignment
 {
-    class EmailWatcher : IObserver
+    class EmailWatcher : IEmailWatcher
     {
         public void Update(string message)
         {
-            Console.WriteLine($"The message is {message}");
+            Console.WriteLine($"The message is: '{message}'");
         }
     }
 }

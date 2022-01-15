@@ -8,6 +8,7 @@ namespace Design_Patterns_Assignment
 {
     interface IEmail : ISubject
     {
+        string Message { get; set; }
         void UpdateMessage();
     }
 }

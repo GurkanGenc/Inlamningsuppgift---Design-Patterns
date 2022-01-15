@@ -6,23 +6,20 @@ using System.Threading.Tasks;
 
 namespace Design_Patterns_Assignment
 {
-    class Observer : IObserver
+    class Observer
     {
         internal static void Run()
         {
             // Refactor this code so that it uses the Observer Pattern
-            Email message = new();
+            Email email = new();
+            EmailWatcher emailWatcher = new();
 
             Console.WriteLine("Observer");
+            email.RegisterObserver(emailWatcher);
 
-            message.UpdateMessage();
+            email.UpdateMessage();
 
             Console.WriteLine();
-        }
-
-        public void Update(string message)
-        {
-            
         }
     }
 }

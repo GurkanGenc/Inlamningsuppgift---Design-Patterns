@@ -6,28 +6,18 @@ namespace Design_Patterns_Assignment
     internal class Email : IEmail
     {
         public List<IObserver> Observers { get; set; }
-        public string message { get; set; }
+        public string Message { get; set; }
 
         public Email()
         {
             Observers = new();
         }
 
-        //internal static string Check()
-        //{
-        //    var evenMinute = DateTime.Now.Minute % 2;
-        //    if (evenMinute==0)
-        //    {
-        //        return "this is the email";
-        //    }
-        //    return null;
-        //}
-
         public void NotifyObservers()
         {
-            foreach (Observer observer in Observers)
+            foreach (var observer in Observers)
             {
-                observer.Update(message);
+                observer.Update(Message);
             }
         }
 
@@ -43,9 +33,7 @@ namespace Design_Patterns_Assignment
 
         public void UpdateMessage()
         {
-            message = "This is the new email";
-            Console.WriteLine(message);
-
+            Message = "This is the new email";
             NotifyObservers();
         }
     }
